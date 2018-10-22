@@ -56,7 +56,7 @@ fun1(fun2);*/
 // bhargav.emit('speak',"Hi very Good morning");
 // Ashvin.emit('speak',"Hi :)");
 
-var fs = require('fs');
+//var fs = require('fs');
 // var readme = fs.readFileSync('README.md', 'utf8'); // For load file in var
 // fs.writeFileSync('HIREN VAGHELA',readme) // Create and paste file
 
@@ -68,6 +68,21 @@ var fs = require('fs');
 // fs.readFile('WriteMe.txt','utf8', function(err,data){ 
 //     console.log(data)    
 // })
-fs.unlink('WriteMe.txt'); // DELETE file
-fs.mkdirSync('Test2');
 
+// fs.unlink('WriteMe.txt'); // DELETE file
+// fs.mkdirSync('Test2');// CREAT directory
+// fs.rmdirSync('Test1'); //REMOVE directory
+
+ 
+
+
+//CLIENT --- SERVER start
+
+var htts = require('http');
+var server = htts.createServer(function(req, res){
+    console.log('Req was made ->   '+req.url)
+    res.writeHead(200, {'Content-Type':'text/plain'});
+    res.end("Hello World");
+});
+server.listen(3000,'127.0.0.1');
+console.log("server running on port 3000");
